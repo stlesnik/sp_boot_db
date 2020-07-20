@@ -18,30 +18,30 @@ public class AtmServiceImpl implements AtmService {
     @Override
     @Transactional
     public void addAtm(Atm atm) {
-        this.atmDao.addAtm(atm);
+        atmDao.addAtm(atm);
     }
 
     @Override
     @Transactional
     public void updateAtm(Atm atm) {
-        this.atmDao.updateAtm(atm);
+        atmDao.updateAtm(atm);
     }
 
     @Override
     @Transactional
     public void removeAtm(int id) {
-        this.atmDao.removeAtm(id);
+        atmDao.removeAtm(id);
     }
 
     @Override
     @Transactional
     public Atm getAtmById(int id) {
-        return this.atmDao.getAtmById(id);
+        return atmDao.getAtmById(id);
     }
 
     @Override
     @Transactional
     public List<Atm> listAtm() {
-        return this.atmDao.listAtm();
+        return atmDao.listAtm();
     }
 }

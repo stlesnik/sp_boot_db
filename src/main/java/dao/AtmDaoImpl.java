@@ -36,7 +36,7 @@ public class AtmDaoImpl implements AtmDao {
     @Override
     public void removeAtm(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Atm atm = (Atm) session.load(Atm.class, id);
+        Atm atm = session.load(Atm.class, id);
         if(atm != null){
             session.delete(atm);
         }
@@ -46,7 +46,7 @@ public class AtmDaoImpl implements AtmDao {
     @Override
     public Atm getAtmById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Atm atm = (Atm) session.load(Atm.class, id);
+        Atm atm = session.load(Atm.class, id);
         logger.info("Atm successfully loaded. Atm details: " + atm);
         return atm;
     }
@@ -54,7 +54,7 @@ public class AtmDaoImpl implements AtmDao {
     @Override
     public List<Atm> listAtm() {
         Session session = this.sessionFactory.getCurrentSession();
-        List<Atm> AtmList= session.createQuery("from Atm").list();
-        return AtmList;
+        List<Atm> atmList= session.createQuery("from Atm").list();
+        return atmList;
     }
 }
